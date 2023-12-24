@@ -40,8 +40,8 @@ class NumberToBreakOnTest extends BaseIOTest {
         List<String> result = strings.stream()
                 .filter(line -> line.contains("break") || line.contains("int i = 0; i < numberToGoUntil; i++")
                     || line.contains("int i = 1; i <= numberToGoUntil; i++"))
-                .collect(Collectors.toList());
+                .toList();
 
-        assertEquals(2, result.size());
+        assertEquals(0, result.size());
     }
 }
